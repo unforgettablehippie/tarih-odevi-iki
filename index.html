@@ -9,11 +9,11 @@
 
   <style>
     :root {
-      --bg: #0e0e0e;
-      --paper: #1b1b1b;
-      --text: #eaeaea;
-      --muted: #b0b0b0;
-      --accent: #c9a14a;
+      --bg: #f4f6f9;
+      --paper: #ffffff;
+      --text: #1f2933;
+      --muted: #6b7280;
+      --accent: #2563eb;
     }
 
     * {
@@ -32,7 +32,7 @@
     header {
       padding: 3rem 1.5rem 2rem;
       text-align: center;
-      border-bottom: 1px solid #2a2a2a;
+      border-bottom: 1px solid #e5e7eb;
     }
 
     header h1 {
@@ -55,16 +55,16 @@
     }
 
     article {
-      background: linear-gradient(180deg, #1c1c1c, #171717);
+      background: linear-gradient(180deg, #ffffff, #f9fafb);
       padding: 2.5rem;
       border-radius: 14px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     article:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+      transform: translateY(-3px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.12);
     }
 
     article p {
@@ -74,7 +74,7 @@
     }
 
     article p:first-of-type {
-      background: rgba(201, 161, 74, 0.08);
+      background: rgba(37, 99, 235, 0.08);
       padding: 1.2rem;
       border-radius: 10px;
     }
@@ -106,6 +106,23 @@
       left: 0;
       color: var(--accent);
       font-weight: 600;
+    }
+
+    .sources {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .sources h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--accent);
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .sources p {
+      font-size: 1rem;
     }
 
     footer {
@@ -156,6 +173,11 @@
         <li>İnternet "çöp bilgi"lerle doludur. Bu bilgiler içerisinden doğrulanmış, güvenilir kaynaklara ait olanları ayırt etmek bazen zorlaşabilir. Bu nedenle tarih araştırmaları yapılırken güvenilir kaynaklar kullanılmalı, bilgiler mutlaka sorgulanmalıdır.</li>
         <li>Siber güvenlik çok önemlidir. Araştırma yapılırken girilen sitelere ve indirilen dosyalara dikkat edilmelidir. Kötü niyetli kişiler bilgisayarınıza zarar verebilir veya verilerinizi çalabilir.</li>
       </ol>
+
+      <section class="sources">
+        <h2>Kaynakça</h2>
+        <p>FATİH YILDIZ HOCA'M</p>
+      </section>
 
     </article>
   </main>
