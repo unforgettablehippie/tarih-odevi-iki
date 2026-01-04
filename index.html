@@ -9,8 +9,8 @@
 
   <style>
     :root {
-      --bg: #0f0f0f;
-      --paper: #1c1c1c;
+      --bg: #0e0e0e;
+      --paper: #1b1b1b;
       --text: #eaeaea;
       --muted: #b0b0b0;
       --accent: #c9a14a;
@@ -26,74 +26,86 @@
       font-family: 'Inter', sans-serif;
       background-color: var(--bg);
       color: var(--text);
-      line-height: 1.7;
+      line-height: 1.8;
     }
 
     header {
-      padding: 2.5rem 1.5rem;
+      padding: 3rem 1.5rem 2rem;
       text-align: center;
       border-bottom: 1px solid #2a2a2a;
     }
 
     header h1 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 5vw, 3rem);
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
       font-weight: 700;
       color: var(--accent);
     }
 
     header p {
-      margin-top: 0.5rem;
+      margin-top: 0.6rem;
       color: var(--muted);
       font-size: 0.95rem;
     }
 
     main {
-      max-width: 850px;
+      max-width: 900px;
       margin: 0 auto;
-      padding: 2rem 1.5rem;
+      padding: 2.5rem 1.5rem;
     }
 
     article {
-      background: var(--paper);
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      background: linear-gradient(180deg, #1c1c1c, #171717);
+      padding: 2.5rem;
+      border-radius: 14px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    article h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.6rem, 4vw, 2.2rem);
-      margin-bottom: 1rem;
-    }
-
-    article h3 {
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-      color: var(--accent);
-      font-weight: 600;
+    article:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.7);
     }
 
     article p {
-      margin-bottom: 1.2rem;
-      font-size: 1rem;
+      margin-bottom: 1.4rem;
+      font-size: 1.02rem;
+      letter-spacing: 0.2px;
+    }
+
+    article p:first-of-type {
+      background: rgba(201, 161, 74, 0.08);
+      padding: 1.2rem;
+      border-radius: 10px;
+    }
+
+    article p strong {
+      display: inline-block;
+      margin-top: 1.8rem;
+      font-size: 1.1rem;
+      color: var(--accent);
     }
 
     ol {
-      margin-left: 1.5rem;
-      margin-bottom: 1.5rem;
+      counter-reset: item;
+      margin-left: 0;
+      margin-bottom: 2rem;
     }
 
     ol li {
-      margin-bottom: 0.8rem;
+      list-style: none;
+      position: relative;
+      padding-left: 2.2rem;
+      margin-bottom: 1rem;
     }
 
-    blockquote {
-      border-left: 4px solid var(--accent);
-      padding-left: 1rem;
-      margin: 2rem 0;
-      color: #d8d8d8;
-      font-style: italic;
+    ol li::before {
+      counter-increment: item;
+      content: counter(item) ".";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 600;
     }
 
     footer {
@@ -105,11 +117,7 @@
 
     @media (max-width: 600px) {
       article {
-        padding: 1.5rem 1.2rem;
-      }
-
-      blockquote {
-        margin: 1.5rem 0;
+        padding: 1.8rem 1.4rem;
       }
     }
   </style>
@@ -119,67 +127,41 @@
 
   <header>
     <h1>Dijitalleşmenin Tarihçilik Üzerine Etkileri</h1>
-    <p>Tarih dersi öğrenci çalışması</p>
+    <p>Tarih ödevi</p>
   </header>
 
   <main>
     <article>
 
-      <h2>Dijitalleşmenin Olumlu ve Olumsuz Etkileri</h2>
-
       <p>
-        Tarih; geçmişte meydana gelen olayları, insanların birbiriyle olan ilişkilerini yer ve zaman belirterek,
-        neden-sonuç ilişkisi içinde, belgelere dayalı ve objektif biçimde inceleyen bir bilim dalıdır.
-        Bu disiplini araştıran ve meslek edinen kişilere tarihçi denir.
+        ★ Tarih; geçmişte meydana gelen olayları, insanların birbiriyle olan ilişkilerini yer-zaman göstererek analitik olarak (neden-sonuç ilişkisi içinde) belgelere dayalı, objektif (tarafsız, nesnel) biçimde anlatan bir disiplindir. Bu disiplini araştıran, meslek edinen kimselere ise tarihçi denir.
       </p>
 
       <p>
-        Tarihçiler, 1990’lı yıllarda internetin yaygınlaşmasından önce analog tarihçilik yapmaktaydı.
-        Araştırmalar genellikle fiziksel belgeler ve yakın okuma yöntemiyle yürütülüyordu.
-        Ancak internetin yaygınlaşmasıyla birlikte analog tarihçilik büyük ölçüde dijital tarihçiliğe evrilmiştir.
+        → Tarihçiler, 1990'lı yıllarda internet kullanımı yaygınlaşmadan önce analog tarihçilik yapardı. Bu iş, analog veriler ve yakın okuma ile birlikte yürütülürdü; ancak internet yaygınlaştıktan sonra analog tarihçilik yerini dijital tarihçiliğe bıraktı.
       </p>
 
-      <blockquote>
-        Dijitalleşme, tarih araştırmalarının yöntemini değiştirmiş; tarihçiye hız, erişim ve yeni anlatım imkânları kazandırmıştır.
-      </blockquote>
+      <p><strong>Dijital Tarihçiliğin Olumlu Yönleri</strong></p>
 
-      <h3>Dijital Tarihçiliğin Olumlu Yönleri</h3>
       <ol>
-        <li>
-          Bilgiye erişim kolaylaşmıştır. Eskiden bir belgeyi incelemek için uzun mesafeler kat etmek gerekirken,
-          günümüzde birçok kaynağa internet üzerinden erişilebilmektedir.
-        </li>
-        <li>
-          Araştırmalarda hız ve zaman tasarrufu sağlanmıştır. Dijital arama araçları sayesinde
-          araştırmacılar istedikleri bilgiye çok daha kısa sürede ulaşabilmektedir.
-        </li>
-        <li>
-          Tarihî eserlerin korunması kolaylaşmıştır. Dijital ortama aktarılan belgeler,
-          fiziksel bozulmalara karşı korunarak gelecek nesillere aktarılabilmektedir.
-        </li>
-        <li>
-          Yeni araştırma ve anlatım yöntemleri ortaya çıkmıştır. 3D modellemeler, simülasyonlar,
-          dijital haritalar ve infografikler tarih öğretimini daha etkili hâle getirmiştir.
-        </li>
+        <li>Bilgiye erişim için uzun mesafeler gitmeye gerek kalmadı. Örneğin eskiden bir belgeyi incelemek için dünyanın öbür ucuna gitmeniz gerekebilirdi; ancak günümüzde oturduğunuz yerden o belgeye ulaşabilirsiniz.</li>
+        <li>Araştırmalarda hız ve zaman tasarrufu sağlandı. Analog tarihçiler bir olayı araştırırken, binlerce sayfalık kitaplarda aradıkları bilgiyi bulmak için fazlaca zaman harcıyorlardı. Günümüzde ise bilgisayarların sağladığı kolaylıkla, aradığınız bilgiyi saniyeler içinde bulmanız mümkün.</li>
+        <li>Eserlerin korunması kolaylaştı. Eskiden tarih araştırmaları yapılırken yıllar önceden kalma kâğıtlar, mürekkepler eskiyor ve bazıları gelecek nesillere ilk günkü haliyle ulaşamıyordu. Artık eserlerin görselleri veya içerikleri dijital ortama aktarılıp, gelecek nesillere bozulmadan ulaştırılabiliyor.</li>
+        <li>Yeni tarih araştırma yöntemleri ortaya çıktı. Tarihçiler, araştırma deneyimlerini 3D modellemeler, simülasyonlar, dijital haritalar ve infografikler ile zenginleştirip tarihi daha etkili bir şekilde öğretebilir ve anlatabilirler.</li>
       </ol>
 
-      <h3>Dijital Tarihçiliğin Olumsuz Yönleri</h3>
+      <p><strong>Dijital Tarihçiliğin Olumsuz Yönleri</strong></p>
+
       <ol>
-        <li>
-          İnternette çok sayıda yanlış ve doğrulanmamış bilgi bulunmaktadır.
-          Bu durum, güvenilir kaynak ayırt etme zorunluluğunu artırmaktadır.
-        </li>
-        <li>
-          Siber güvenlik sorunları önem kazanmıştır.
-          Kötü niyetli yazılımlar ve sahte siteler araştırmacılar için risk oluşturmaktadır.
-        </li>
+        <li>İnternet "çöp bilgi"lerle doludur. Bu bilgiler içerisinden doğrulanmış, güvenilir kaynaklara ait olanları ayırt etmek bazen zorlaşabilir. Bu nedenle tarih araştırmaları yapılırken güvenilir kaynaklar kullanılmalı, bilgiler mutlaka sorgulanmalıdır.</li>
+        <li>Siber güvenlik çok önemlidir. Araştırma yapılırken girilen sitelere ve indirilen dosyalara dikkat edilmelidir. Kötü niyetli kişiler bilgisayarınıza zarar verebilir veya verilerinizi çalabilir.</li>
       </ol>
 
     </article>
   </main>
 
   <footer>
-    Duru Süngeç
+    Duru Süngeç 
   </footer>
 
 </body>
