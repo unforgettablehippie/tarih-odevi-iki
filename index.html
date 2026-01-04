@@ -1,190 +1,152 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tarih Blogu | Dijitalleşmenin Tarihçilik Üzerine Etkileri</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dijital Tarihçilik</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f4f9ff;
+            --card-bg: #ffffff;
+            --text-color: #1a1a1a;
+            --accent: #1e88e5;
+            --border: #d0e2ff;
+        }
 
-  <style>
-    :root {
-      --bg: #f4f6f9;
-      --paper: #ffffff;
-      --text: #1f2933;
-      --muted: #6b7280;
-      --accent: #2563eb;
-    }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            padding: 20px;
+        }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.8;
-    }
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
 
-    header {
-      padding: 3rem 1.5rem 2rem;
-      text-align: center;
-      border-bottom: 1px solid #e5e7eb;
-    }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
 
-    header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.2rem, 5vw, 3.2rem);
-      font-weight: 700;
-      color: var(--accent);
-    }
+        header h1 {
+            color: var(--accent);
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
 
-    header p {
-      margin-top: 0.6rem;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
 
-    main {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 2.5rem 1.5rem;
-    }
+        .card h2 {
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
 
-    article {
-      background: linear-gradient(180deg, #ffffff, #f9fafb);
-      padding: 2.5rem;
-      border-radius: 14px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+        p {
+            margin-bottom: 15px;
+        }
 
-    article:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.12);
-    }
+        ul {
+            padding-left: 20px;
+        }
 
-    article p {
-      margin-bottom: 1.4rem;
-      font-size: 1.02rem;
-      letter-spacing: 0.2px;
-    }
+        li {
+            margin-bottom: 10px;
+        }
 
-    article p:first-of-type {
-      background: rgba(37, 99, 235, 0.08);
-      padding: 1.2rem;
-      border-radius: 10px;
-    }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #555;
+        }
 
-    article p strong {
-      display: inline-block;
-      margin-top: 1.8rem;
-      font-size: 1.1rem;
-      color: var(--accent);
-    }
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
 
-    ol {
-      counter-reset: item;
-      margin-left: 0;
-      margin-bottom: 2rem;
-    }
-
-    ol li {
-      list-style: none;
-      position: relative;
-      padding-left: 2.2rem;
-      margin-bottom: 1rem;
-    }
-
-    ol li::before {
-      counter-increment: item;
-      content: counter(item) ".";
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-      font-weight: 600;
-    }
-
-    .sources {
-      margin-top: 3rem;
-      padding-top: 2rem;
-      border-top: 1px solid #e5e7eb;
-    }
-
-    .sources h2 {
-      font-family: 'Playfair Display', serif;
-      color: var(--accent);
-      font-size: 1.6rem;
-      margin-bottom: 1rem;
-    }
-
-    .sources p {
-      font-size: 1rem;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      color: var(--muted);
-      font-size: 0.85rem;
-    }
-
-    @media (max-width: 600px) {
-      article {
-        padding: 1.8rem 1.4rem;
-      }
-    }
-  </style>
+            header h1 {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-  <header>
-    <h1>Dijitalleşmenin Tarihçilik Üzerine Etkileri</h1>
-    <p>Tarih ödevi</p>
-  </header>
+<div class="container">
 
-  <main>
-    <article>
+    <header>
+        <h1>Dijital Tarihçilik</h1>
+        <p>Tarih ve teknolojinin kesişimi</p>
+    </header>
 
-      <p>
-        ★ Tarih; geçmişte meydana gelen olayları, insanların birbiriyle olan ilişkilerini yer-zaman göstererek analitik olarak (neden-sonuç ilişkisi içinde) belgelere dayalı, objektif (tarafsız, nesnel) biçimde anlatan bir disiplindir. Bu disiplini araştıran, meslek edinen kimselere ise tarihçi denir.
-      </p>
+    <div class="card">
+        <p>
+            ★ Tarih; geçmişte meydana gelen olayları, insanların birbiriyle olan ilişkilerini yer-zaman göstererek analitik olarak (neden-sonuç ilişkisi içinde) belgelere dayalı, objektif (tarafsız, nesnel) biçimde anlatan bir disiplindir. Bu disiplini araştıran, meslek edinen kimselere ise tarihçi denir.
+        </p>
 
-      <p>
-        → Tarihçiler, 1990'lı yıllarda internet kullanımı yaygınlaşmadan önce analog tarihçilik yapardı. Bu iş, analog veriler ve yakın okuma ile birlikte yürütülürdü; ancak internet yaygınlaştıktan sonra analog tarihçilik yerini dijital tarihçiliğe bıraktı.
-      </p>
+        <p>
+            → Tarihçiler, 1990'lı yıllarda internet kullanımı yaygınlaşmadan önce analog tarihçilik yapardı. Bu iş, analog veriler ve yakın okuma ile birlikte yürütülürdü; ancak internet yaygınlaştıktan sonra analog tarihçilik yerini dijital tarihçiliğe bıraktı.
+        </p>
+    </div>
 
-      <p><strong>Dijital Tarihçiliğin Olumlu Yönleri</strong></p>
+    <div class="card">
+        <h2>Dijital Tarihçiliğin Olumlu Yönleri</h2>
+        <ul>
+            <li>
+                Bilgiye erişim için uzun mesafeler gitmeye gerek kalmadı. Örneğin eskiden bir belgeyi incelemek için dünyanın öbür ucuna gitmeniz gerekebilirdi; ancak günümüzde oturduğunuz yerden o belgeye ulaşabilirsiniz.
+            </li>
+            <li>
+                Araştırmalarda hız ve zaman tasarrufu sağlandı. Analog tarihçiler bir olayı araştırırken, binlerce sayfalık kitaplarda aradıkları bilgiyi bulmak için fazlaca zaman harcıyorlardı. Günümüzde ise bilgisayarların sağladığı kolaylıkla, aradığınız bilgiyi saniyeler içinde bulmanız mümkün.
+            </li>
+            <li>
+                Eserlerin korunması kolaylaştı. Eskiden tarih araştırmaları yapılırken yıllar önceden kalma kâğıtlar, mürekkepler eskiyor ve bazıları gelecek nesillere ilk günkü haliyle ulaşamıyordu. Artık eserlerin görselleri veya içerikleri dijital ortama aktarılıp, gelecek nesillere bozulmadan ulaştırılabiliyor.
+            </li>
+            <li>
+                Yeni tarih araştırma yöntemleri ortaya çıktı. Tarihçiler, araştırma deneyimlerini 3D modellemeler, simülasyonlar, dijital haritalar ve infografikler ile zenginleştirip tarihi daha etkili bir şekilde öğretebilir ve anlatabilirler.
+            </li>
+        </ul>
+    </div>
 
-      <ol>
-        <li>Bilgiye erişim için uzun mesafeler gitmeye gerek kalmadı. Örneğin eskiden bir belgeyi incelemek için dünyanın öbür ucuna gitmeniz gerekebilirdi; ancak günümüzde oturduğunuz yerden o belgeye ulaşabilirsiniz.</li>
-        <li>Araştırmalarda hız ve zaman tasarrufu sağlandı. Analog tarihçiler bir olayı araştırırken, binlerce sayfalık kitaplarda aradıkları bilgiyi bulmak için fazlaca zaman harcıyorlardı. Günümüzde ise bilgisayarların sağladığı kolaylıkla, aradığınız bilgiyi saniyeler içinde bulmanız mümkün.</li>
-        <li>Eserlerin korunması kolaylaştı. Eskiden tarih araştırmaları yapılırken yıllar önceden kalma kâğıtlar, mürekkepler eskiyor ve bazıları gelecek nesillere ilk günkü haliyle ulaşamıyordu. Artık eserlerin görselleri veya içerikleri dijital ortama aktarılıp, gelecek nesillere bozulmadan ulaştırılabiliyor.</li>
-        <li>Yeni tarih araştırma yöntemleri ortaya çıktı. Tarihçiler, araştırma deneyimlerini 3D modellemeler, simülasyonlar, dijital haritalar ve infografikler ile zenginleştirip tarihi daha etkili bir şekilde öğretebilir ve anlatabilirler.</li>
-      </ol>
+    <div class="card">
+        <h2>Dijital Tarihçiliğin Olumsuz Yönleri</h2>
+        <ul>
+            <li>
+                İnternet "çöp bilgi"lerle doludur. Bu bilgiler içerisinden doğrulanmış, güvenilir kaynaklara ait olanları ayırt etmek bazen zorlaşabilir. Bu nedenle tarih araştırmaları yapılırken güvenilir kaynaklar kullanılmalı, bilgiler mutlaka sorgulanmalıdır.
+            </li>
+            <li>
+                Siber güvenlik çok önemlidir. Araştırma yapılırken girilen sitelere ve indirilen dosyalara dikkat edilmelidir. Kötü niyetli kişiler bilgisayarınıza zarar verebilir veya verilerinizi çalabilir.
+            </li>
+        </ul>
+    </div>
 
-      <p><strong>Dijital Tarihçiliğin Olumsuz Yönleri</strong></p>
-
-      <ol>
-        <li>İnternet "çöp bilgi"lerle doludur. Bu bilgiler içerisinden doğrulanmış, güvenilir kaynaklara ait olanları ayırt etmek bazen zorlaşabilir. Bu nedenle tarih araştırmaları yapılırken güvenilir kaynaklar kullanılmalı, bilgiler mutlaka sorgulanmalıdır.</li>
-        <li>Siber güvenlik çok önemlidir. Araştırma yapılırken girilen sitelere ve indirilen dosyalara dikkat edilmelidir. Kötü niyetli kişiler bilgisayarınıza zarar verebilir veya verilerinizi çalabilir.</li>
-      </ol>
-
-      <section class="sources">
+    <div class="card">
         <h2>Kaynakça</h2>
         <p>FATİH YILDIZ HOCA'M</p>
-      </section>
+    </div>
 
-    </article>
-  </main>
+    <footer>
+        <p>© 2026 Dijital Tarih Blogu</p>
+    </footer>
 
-  <footer>
-    Duru Süngeç 
-  </footer>
+</div>
 
 </body>
 </html>
